@@ -1,0 +1,684 @@
+{
+ "followthrough": {
+  "v10-main": {
+   "refusals": 224,
+   "reviewed": 0,
+   "asked_2c": [
+    107,
+    224
+   ],
+   "again": [
+    76,
+    158
+   ],
+   "asked_before_again": [
+    39,
+    76
+   ],
+   "changed": [
+    52,
+    76
+   ],
+   "again_settled": [
+    45,
+    76
+   ],
+   "plans": {
+    "ask": {
+     "n": 0,
+     "asked_2c": [
+      0,
+      0
+     ],
+     "again": [
+      0,
+      0
+     ],
+     "changed": [
+      0,
+      0
+     ]
+    },
+    "terms": {
+     "n": 0,
+     "asked_2c": [
+      0,
+      0
+     ],
+     "again": [
+      0,
+      0
+     ],
+     "changed": [
+      0,
+      0
+     ]
+    },
+    "other": {
+     "n": 0,
+     "asked_2c": [
+      0,
+      0
+     ],
+     "again": [
+      0,
+      0
+     ],
+     "changed": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  "v11b-fault": {
+   "refusals": 97,
+   "reviewed": 86,
+   "asked_2c": [
+    42,
+    97
+   ],
+   "again": [
+    28,
+    62
+   ],
+   "asked_before_again": [
+    13,
+    28
+   ],
+   "changed": [
+    21,
+    28
+   ],
+   "again_settled": [
+    17,
+    28
+   ],
+   "plans": {
+    "ask": {
+     "n": 82,
+     "asked_2c": [
+      41,
+      82
+     ],
+     "again": [
+      20,
+      52
+     ],
+     "changed": [
+      13,
+      20
+     ]
+    },
+    "terms": {
+     "n": 62,
+     "asked_2c": [
+      27,
+      62
+     ],
+     "again": [
+      17,
+      40
+     ],
+     "changed": [
+      12,
+      17
+     ]
+    },
+    "other": {
+     "n": 20,
+     "asked_2c": [
+      3,
+      20
+     ],
+     "again": [
+      3,
+      14
+     ],
+     "changed": [
+      1,
+      3
+     ]
+    }
+   }
+  },
+  "v11b-s1": {
+   "refusals": 221,
+   "reviewed": 208,
+   "asked_2c": [
+    113,
+    221
+   ],
+   "again": [
+    59,
+    145
+   ],
+   "asked_before_again": [
+    36,
+    59
+   ],
+   "changed": [
+    50,
+    59
+   ],
+   "again_settled": [
+    36,
+    59
+   ],
+   "plans": {
+    "ask": {
+     "n": 205,
+     "asked_2c": [
+      109,
+      205
+     ],
+     "again": [
+      49,
+      132
+     ],
+     "changed": [
+      40,
+      49
+     ]
+    },
+    "terms": {
+     "n": 131,
+     "asked_2c": [
+      69,
+      131
+     ],
+     "again": [
+      34,
+      94
+     ],
+     "changed": [
+      30,
+      34
+     ]
+    },
+    "other": {
+     "n": 32,
+     "asked_2c": [
+      5,
+      32
+     ],
+     "again": [
+      5,
+      24
+     ],
+     "changed": [
+      5,
+      5
+     ]
+    }
+   }
+  }
+ },
+ "deception": {
+  "v9-main2-30c-lean": [
+   0,
+   427
+  ],
+  "v10-main-30c-lean": [
+   0,
+   539
+  ],
+  "v11b-fault-30c-lean": [
+   0,
+   209
+  ],
+  "v11b-s1-30c-lean": [
+   0,
+   485
+  ]
+ },
+ "votes": {
+  "old": {
+   "rounds_by_seed": {
+    "105": 2,
+    "106": 2,
+    "108": 510
+   },
+   "rounds": 514,
+   "votes": 6168,
+   "wait_votes": 4876,
+   "appoint_votes": 1292,
+   "first_round": {
+    "wait": 6
+   }
+  },
+  "b70": {
+   "rounds_by_seed": {
+    "105": 1,
+    "106": 1,
+    "108": 4
+   },
+   "rounds": 6,
+   "votes": 72,
+   "wait_votes": 3,
+   "appoint_votes": 69,
+   "first_round": {
+    "appoint": 6
+   }
+  }
+ },
+ "sharing": {
+  "events": 48,
+  "to_helper": 46,
+  "to_trade_helper": 28,
+  "points": 330
+ },
+ "accept_by_affinity": {
+  "high(>=60)|F": [
+   272,
+   471
+  ],
+  "high(>=60)|T": [
+   263,
+   448
+  ],
+  "mid(41-59)|F": [
+   43,
+   65
+  ],
+  "mid(41-59)|T": [
+   42,
+   70
+  ],
+  "no_score|?": [
+   1,
+   1
+  ],
+  "no_score|F": [
+   41,
+   56
+  ],
+  "no_score|T": [
+   32,
+   38
+  ]
+ },
+ "metrics": {
+  "affinity": {
+   "relationship_changes": {
+    "reaction": {
+     "n": 8001,
+     "mean_delta": 1.41,
+     "up": 5913,
+     "down": 205
+    }
+   },
+   "final_affinity_mean": 77.03,
+   "final_affinity_sd": 17.93
+  },
+  "approaches": {
+   "question": {
+    "n": 2778,
+    "success_sum": 3136,
+    "transferred": 2430,
+    "any_transfer": 1430,
+    "success_mean": 1.129,
+    "transfer_rate": 0.515,
+    "clues_per_question": 0.875
+   },
+   "persuade": {
+    "n": 390,
+    "success_sum": 533,
+    "transferred": 428,
+    "any_transfer": 253,
+    "success_mean": 1.367,
+    "transfer_rate": 0.649,
+    "clues_per_question": 1.097
+   },
+   "interrogate": {
+    "n": 377,
+    "success_sum": 455,
+    "transferred": 343,
+    "any_transfer": 201,
+    "success_mean": 1.207,
+    "transfer_rate": 0.533,
+    "clues_per_question": 0.91
+   },
+   "threaten": {
+    "n": 109,
+    "success_sum": 174,
+    "transferred": 132,
+    "any_transfer": 79,
+    "success_mean": 1.596,
+    "transfer_rate": 0.725,
+    "clues_per_question": 1.211
+   }
+  },
+  "pairs": {
+   "pairs_with_settled_trade": 163,
+   "pairs_in_2plus_games": 92,
+   "pairs_in_3plus_games": 55
+  },
+  "coord": {
+   "replacement_granted": 401,
+   "phase_locked": 80,
+   "link_down": 7,
+   "link_up": 4,
+   "gm_absent": 6,
+   "gm_succeeded": 6,
+   "gm_returned": 1
+  },
+  "settle": {
+   "proposals": 1149,
+   "settled": 694,
+   "refused": 421,
+   "open_at_end": 34,
+   "countered": 195,
+   "settled_after_counter": 168,
+   "settle_rate": 0.604,
+   "refuse_reasons": {
+    "refused": 251,
+    "crossed_refused": 20,
+    "another_chosen": 67,
+    "recipient_action_used": 55,
+    "crossed_both_refused": 28
+   },
+   "seconds_median": {
+    "settled": 16.4,
+    "refused": 12.7
+   }
+  }
+ },
+ "axis": {
+  "EI|E": {
+   "axis": "EI",
+   "letter": "E",
+   "agents_x_campaigns": "16",
+   "games": "145",
+   "questions_per_game": "13.041",
+   "trade_proposals_per_game": "3.821",
+   "hostile_share": "0.137",
+   "persuade_share": "0.098",
+   "accept_rate": "0.572",
+   "deception_rate": "0.0",
+   "give_take_ratio": "1.051",
+   "talk_chars_mean": "61.921",
+   "rel_up_share": "0.732",
+   "accuse_per_game": "0.524",
+   "accuse_right_rate": "0.303"
+  },
+  "EI|I": {
+   "axis": "EI",
+   "letter": "I",
+   "agents_x_campaigns": "16",
+   "games": "143",
+   "questions_per_game": "12.329",
+   "trade_proposals_per_game": "4.161",
+   "hostile_share": "0.129",
+   "persuade_share": "0.116",
+   "accept_rate": "0.64",
+   "deception_rate": "0.0",
+   "give_take_ratio": "0.942",
+   "talk_chars_mean": "61.894",
+   "rel_up_share": "0.747",
+   "accuse_per_game": "0.531",
+   "accuse_right_rate": "0.184"
+  },
+  "SN|S": {
+   "axis": "SN",
+   "letter": "S",
+   "agents_x_campaigns": "16",
+   "games": "144",
+   "questions_per_game": "12.396",
+   "trade_proposals_per_game": "4.021",
+   "hostile_share": "0.132",
+   "persuade_share": "0.099",
+   "accept_rate": "0.59",
+   "deception_rate": "0.0",
+   "give_take_ratio": "1.036",
+   "talk_chars_mean": "61.403",
+   "rel_up_share": "0.745",
+   "accuse_per_game": "0.479",
+   "accuse_right_rate": "0.232"
+  },
+  "SN|N": {
+   "axis": "SN",
+   "letter": "N",
+   "agents_x_campaigns": "16",
+   "games": "144",
+   "questions_per_game": "12.979",
+   "trade_proposals_per_game": "3.958",
+   "hostile_share": "0.134",
+   "persuade_share": "0.114",
+   "accept_rate": "0.617",
+   "deception_rate": "0.0",
+   "give_take_ratio": "0.961",
+   "talk_chars_mean": "62.399",
+   "rel_up_share": "0.733",
+   "accuse_per_game": "0.576",
+   "accuse_right_rate": "0.253"
+  },
+  "TF|T": {
+   "axis": "TF",
+   "letter": "T",
+   "agents_x_campaigns": "16",
+   "games": "143",
+   "questions_per_game": "13.084",
+   "trade_proposals_per_game": "3.93",
+   "hostile_share": "0.254",
+   "persuade_share": "0.105",
+   "accept_rate": "0.606",
+   "deception_rate": "0.0",
+   "give_take_ratio": "0.937",
+   "talk_chars_mean": "61.265",
+   "rel_up_share": "0.749",
+   "accuse_per_game": "0.51",
+   "accuse_right_rate": "0.205"
+  },
+  "TF|F": {
+   "axis": "TF",
+   "letter": "F",
+   "agents_x_campaigns": "16",
+   "games": "145",
+   "questions_per_game": "12.297",
+   "trade_proposals_per_game": "4.048",
+   "hostile_share": "0.006",
+   "persuade_share": "0.108",
+   "accept_rate": "0.601",
+   "deception_rate": "0.0",
+   "give_take_ratio": "1.067",
+   "talk_chars_mean": "62.535",
+   "rel_up_share": "0.729",
+   "accuse_per_game": "0.545",
+   "accuse_right_rate": "0.278"
+  },
+  "JP|J": {
+   "axis": "JP",
+   "letter": "J",
+   "agents_x_campaigns": "16",
+   "games": "143",
+   "questions_per_game": "12.692",
+   "trade_proposals_per_game": "4.105",
+   "hostile_share": "0.158",
+   "persuade_share": "0.094",
+   "accept_rate": "0.59",
+   "deception_rate": "0.0",
+   "give_take_ratio": "1.01",
+   "talk_chars_mean": "63.355",
+   "rel_up_share": "0.739",
+   "accuse_per_game": "0.531",
+   "accuse_right_rate": "0.25"
+  },
+  "JP|P": {
+   "axis": "JP",
+   "letter": "P",
+   "agents_x_campaigns": "16",
+   "games": "145",
+   "questions_per_game": "12.683",
+   "trade_proposals_per_game": "3.876",
+   "hostile_share": "0.108",
+   "persuade_share": "0.12",
+   "accept_rate": "0.618",
+   "deception_rate": "0.0",
+   "give_take_ratio": "0.985",
+   "talk_chars_mean": "60.455",
+   "rel_up_share": "0.739",
+   "accuse_per_game": "0.524",
+   "accuse_right_rate": "0.237"
+  }
+ },
+ "probe": {
+  "p1": {
+   "tf_split": 0.83,
+   "e_on_agree": 1.4,
+   "s_intellect": 27.9,
+   "n_intellect": 43.7,
+   "label_s_intellect": 36.2
+  },
+  "p2": {
+   "tf_split": 1.0,
+   "e_on_agree": 1.02,
+   "s_intellect": 30.3,
+   "n_intellect": 43.6,
+   "label_s_intellect": null
+  }
+ },
+ "documented": {
+  "talk_v9": {
+   "src": "unified-packages-v11/docs/요소별_영향_분석_v8_v9.md §5",
+   "call_share": [
+    10490,
+    27507
+   ],
+   "heard_from_room": 0.88,
+   "affinity_final": 98.4,
+   "affinity_at_100": [
+    211,
+    240
+   ],
+   "win_by_quartile": [
+    4.2,
+    6.2,
+    8.3,
+    4.2
+   ],
+   "pair_propose_talk": 13.0,
+   "pair_propose_notalk": 6.6,
+   "propose_all_before": 11.1,
+   "propose_all_after": 10.2
+  },
+  "memory_v8": {
+   "src": "unified-packages-fixed/docs/v8_캠페인_보고서.md (03 실험기록 §4)",
+   "questions": 2536,
+   "remembered": 0,
+   "actual": 833
+  },
+  "accuse_v9b": {
+   "src": "요소별_영향_분석_v8_v9.md §4.1",
+   "no_loss": 92,
+   "total": 115,
+   "cite_mission": 78,
+   "correct_in_no_loss": 10
+  },
+  "signal_fix": {
+   "src": "03 실험기록 §6.1, b68_effect.py",
+   "forced_refusal_before": 0.78,
+   "forced_refusal_after": [
+    0.14,
+    0.08
+   ],
+   "settle_v9b": [
+    427,
+    1054
+   ],
+   "settle_v10": [
+    539,
+    915
+   ]
+  },
+  "fault": {
+   "src": "03 실험기록 §7.2, §7.6, 01 여정 §8",
+   "stall_hours": 42,
+   "funnel": [
+    332,
+    23,
+    2,
+    1
+   ],
+   "t103": [
+    139,
+    68
+   ],
+   "t108": [
+    538,
+    39
+   ],
+   "quota108": 11
+  },
+  "role": {
+   "src": "03 실험기록 §3 (v7 → v8)",
+   "wrong_target": [
+    34,
+    0
+   ],
+   "unparsable": [
+    14,
+    0
+   ]
+  },
+  "calls": {
+   "src": "03 실험기록 §6.2",
+   "per_game": [
+    1719,
+    1144
+   ],
+   "tokens_m": [
+    35.1,
+    25.7
+   ]
+  },
+  "rank_corr_v9_v10": {
+   "src": "03 실험기록 §6.2",
+   "rho": 0.11
+  },
+  "s1_rank": {
+   "src": "03 실험기록 §7.7",
+   "top": [
+    [
+     "ESTP",
+     31.1
+    ],
+    [
+     "INFJ",
+     30.7
+    ],
+    [
+     "ENFP",
+     28.8
+    ],
+    [
+     "ENTJ",
+     28.3
+    ]
+   ],
+   "bottom": [
+    [
+     "ISFJ",
+     3.8
+    ],
+    [
+     "ISTJ",
+     3.4
+    ],
+    [
+     "ISTP",
+     2.8
+    ],
+    [
+     "ISFP",
+     0.9
+    ]
+   ]
+  },
+  "probe_entj": {
+   "src": "03 실험기록 §7.5",
+   "p1": 0.64,
+   "p2": 0.81
+  }
+ }
+}
