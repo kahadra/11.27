@@ -1,8 +1,8 @@
-"""Build the 2026-11-27 IRV_Lab seminar deck: how do you verify a multi-agent system? (third multi-agent talk)
+"""Build the 2026-11-27 IRV_Lab seminar deck: between a shared goal and a personal goal (third talk on the team project).
 
-Series: 10.30 what an agent is (theory) -> 11.13 how to build one (practice) -> 11.27 how to know it works (verification).
-Core theme (user, 2026-11-23): a multi-agent system must be verified by behaviour, not by words.
-Three kinds of 'words': the agents' own words, the design's words, the textbook's words.
+Series: 10.30 what an agent is (theory) -> 11.13 how we built it (practice) -> 11.27 the research question, answered.
+Core question (team technical report 1.1-1.2): when the shared goal and a personal goal conflict, do LLM agents
+withhold information, and where does cooperation stop? Method: engine-recorded behaviour, not the agents' words.
 
 Reuses the 10.30 deck's CSS, navigation, notes and timer (as 11.13 did). Every number comes from results.json
 (analyze.py: recomputed from run records, or quoted from an earlier analysis document with its source).
@@ -74,8 +74,9 @@ def verdict(kind):
             "미확인": '<span class="tag bad">미확인</span>', "대응": '<span class="tag ok">대응</span>'}[kind]
 
 
-def bars(cats, series, w=560, h=270):
-    """Grouped vertical bars, values 0..1. series: [(name, color, [v per cat])]."""
+def bars(cats, series, w=560, h=270, fmt=None):
+    """Grouped vertical bars, values 0..1. series: [(name, color, [v per cat])]. fmt formats value labels (default %)."""
+    fmt = fmt or pct
     pad_l, pad_b, pad_t = 44, 62, 26
     plot_w, plot_h = w - pad_l - 10, h - pad_b - pad_t
     gw = plot_w / len(cats)
@@ -84,7 +85,7 @@ def bars(cats, series, w=560, h=270):
     for t in (0, .25, .5, .75, 1):
         y = pad_t + plot_h * (1 - t)
         out.append(f'<line x1="{pad_l}" x2="{w - 10}" y1="{y:.1f}" y2="{y:.1f}" class="grid"/>'
-                   f'<text x="{pad_l - 8}" y="{y + 5:.1f}" class="axis" text-anchor="end">{pct(t)}</text>')
+                   f'<text x="{pad_l - 8}" y="{y + 5:.1f}" class="axis" text-anchor="end">{fmt(t)}</text>')
     for ci, c in enumerate(cats):
         x0 = pad_l + gw * ci + (gw - bw * len(series) - 3 * (len(series) - 1)) / 2
         for si, (name, color, vals) in enumerate(series):
@@ -93,8 +94,8 @@ def bars(cats, series, w=560, h=270):
             x, y = x0 + si * (bw + 3), pad_t + plot_h - bh
             r = min(4, bh / 2)
             out.append(f'<path d="M{x:.1f},{pad_t + plot_h} V{y + r:.1f} Q{x:.1f},{y:.1f} {x + r:.1f},{y:.1f} H{x + bw - r:.1f} '
-                       f'Q{x + bw:.1f},{y:.1f} {x + bw:.1f},{y + r:.1f} V{pad_t + plot_h}Z" fill="{color}"><title>{esc(name)} · {esc(c)}: {pct(v)}</title></path>'
-                       f'<text x="{x + bw / 2:.1f}" y="{y - 7:.1f}" class="val" text-anchor="middle">{pct(v)}</text>')
+                       f'Q{x + bw:.1f},{y:.1f} {x + bw:.1f},{y + r:.1f} V{pad_t + plot_h}Z" fill="{color}"><title>{esc(name)} · {esc(c)}: {fmt(v)}</title></path>'
+                       f'<text x="{x + bw / 2:.1f}" y="{y - 7:.1f}" class="val" text-anchor="middle">{fmt(v)}</text>')
         cx = pad_l + gw * ci + gw / 2
         lines = c.split("\n")
         spans = "".join(f'<tspan x="{cx:.1f}" dy="{0 if k == 0 else 17}">{esc(s)}</tspan>' for k, s in enumerate(lines))
@@ -154,11 +155,11 @@ for s in slides:
 parts = []
 for i, s in enumerate(slides):
     if i == 0:
-        body = ('<div class="title-top"><span class="pill dark">MULTI-AGENT · PART 3 · VERIFICATION</span><span>IRV_LAB SEMINAR · 20 MIN</span></div>'
-                '<div class="title-main"><div class="title-rule"></div><h1>멀티에이전트,<br>어떻게 검증하는가</h1>'
-                '<h2>말이 아니라 행동으로 — LLM 에이전트 12명 추리 게임, 한 학기의 마무리</h2>'
-                '<p class="title-korean">10.30 무엇인가 · 11.13 어떻게 만드는가 · 11.27 작동하는지 어떻게 아는가</p>'
-                '<p class="authors">수업 팀 프로젝트 · 교재 I (Wooldridge) · 교재 II (Albada)</p></div>'
+        body = ('<div class="title-top"><span class="pill dark">MULTI-AGENT · PART 3 · MIXED MOTIVES</span><span>IRV_LAB SEMINAR · 20 MIN</span></div>'
+                '<div class="title-main"><div class="title-rule"></div><h1>공동 목표와<br>개인 목표 사이</h1>'
+                '<h2>LLM 멀티에이전트 머더 미스터리에서의 정보 공개와 협력</h2>'
+                '<p class="title-korean">10.30 무엇인가 · 11.13 어떻게 만들었나 · 11.27 두 목표가 부딪힐 때</p>'
+                '<p class="authors">수업 팀 프로젝트 (이재형 · 박천웅 · 황규한) · 팀 기술 보고서</p></div>'
                 '<div class="title-meta"><div><small>PRESENTER</small><b>박천웅</b></div><div><small>AFFILIATION</small><b>IRV_Lab</b></div>'
                 '<div><small>DATE</small><b>2026. 11. 27.</b></div><div><small>TIME LIMIT</small><b>20 min</b></div></div>')
     else:
@@ -178,8 +179,8 @@ js = js.replace("| AI Agents Seminar", "| Multi-Agent Seminar").replace("toolUse
 assert f"const mainCount={MAIN}" in js and "multiAgentVerifyTimer" in js
 head = old[:old.index("<style>")]
 head = re.sub(r'<meta name="description" content="[^"]*">',
-              '<meta name="description" content="멀티에이전트, 어떻게 검증하는가 · IRV_Lab 2026.11.27 · 박천웅 · 20분 세미나">', head)
-head = re.sub(r"<title>.*?</title>", "<title>Multi-Agent Verification · 2026.11.27 Seminar</title>", head)
+              '<meta name="description" content="공동 목표와 개인 목표 사이 · IRV_Lab 2026.11.27 · 박천웅 · 20분 세미나">', head)
+head = re.sub(r"<title>.*?</title>", "<title>Mixed-Motive Agents · 2026.11.27 Seminar</title>", head)
 data = [{k: v for k, v in s.items() if k != "body"} for s in slides]
 result = (head + "<style>" + css + '</style></head><body class="deck"><main class="viewport"><div id="deck">' + "".join(parts)
           + "</div></main>" + controls + "<script>const slideData=" + json.dumps(data, ensure_ascii=False) + ";\n" + js + "</script></body></html>")
@@ -189,16 +190,16 @@ result = (head + "<style>" + css + '</style></head><body class="deck"><main clas
 
 chars = sum(len(s["notes"]) for s in slides[:MAIN])
 RATE = 5.1   # user's measured speaking rate (chars/s, 2026-11-01 rehearsal)
-script = ["# 멀티에이전트, 어떻게 검증하는가 — 세미나 발표 대본", "", f"박천웅 · IRV_Lab · {DATE}", "",
+script = ["# 공동 목표와 개인 목표 사이 — 세미나 발표 대본", "", f"박천웅 · IRV_Lab · {DATE}", "",
           f"본편 **{MAIN}장 · 계획 {clock(PLANNED)}**, 전환 여유 **{clock(LIMIT - PLANNED)}**, 발표 제한 **{clock(LIMIT)}**. 부록 {len(slides) - MAIN}장은 본편에 포함하지 않습니다.",
           f"본편 대본 {chars:,}자 · 발표자 리허설 속도(초당 {RATE}자) 기준 약 {chars / RATE / 60:.1f}분. 실제 시간은 리허설로 확인해야 합니다.", "",
-          "## 핵심 주제", "", "> **멀티에이전트는 말이 아니라 행동으로 검증해야 한다.**", "",
-          "- 시리즈: 10.30 멀티에이전트란 무엇인가(이론) → 11.13 어떻게 만드는가(실전) → 11.27 작동하는지 어떻게 아는가(검증).",
-          "- '말' 세 가지: 에이전트의 말(회고, 관계 점수, 기억) · 설계의 말(인수인계 규칙, 성격 설명문) · 교재의 말(멀티에이전트의 강점).", "",
+          "## 핵심 질문", "", "> **공동 목표와 개인 목표가 부딪힐 때, 에이전트는 정보를 숨기는가? 협력은 어디서 멈추는가?**", "",
+          "- 시리즈: 10.30 에이전트란 무엇인가(이론) → 11.13 어떻게 만들었나(구현) → 11.27 팀 보고서의 연구 질문에 최종 실험(v11b 24판)으로 답함.",
+          "- 답: 개인 점수를 확보해도 정보를 숨기지 않음. 대신 '손해 없는 추리 도전'으로 판에서 빠짐. 검증은 에이전트의 말이 아니라 엔진에 남은 행동으로 함.", "",
           "## 시간 운영", "",
           "- 표지에서 `T`를 눌러 20분 타이머를 시작합니다. `T`는 일시정지/재개, `↺`는 초기화입니다.",
-          "- 체크포인트: @@E5@@ 도입 종료 / @@E9@@ 에이전트의 말 종료 / @@E15@@ 설계의 말 종료 / @@E18@@ 교재의 말 종료 / @@E20@@ 정리 종료.",
-          "- 1분 이상 늦으면 7장(담화방)과 15장(성격은 행동에서)은 표의 마지막 줄만 말하고 넘어갑니다.", "",
+          "- 체크포인트: @@E7@@ 서론 종료 / @@E11@@ 설계와 검증법 종료 / @@E16@@ 결과 종료 / @@E19@@ 결론 종료.",
+          "- 1분 이상 늦으면 9장(왜 멀티에이전트인가)과 11장(조작 점검)은 마지막 줄만 말하고 넘어갑니다. 14–15장(RQ3)은 줄이지 않습니다.", "",
           "## 본편 시간표", "", "| 장 | 주제 | 구간 | 배정 |", "|---|---|---|---|"]
 for i, s in enumerate(slides[:MAIN]):
     script.append(f'| {i + 1:02} | {s["title"]} | {s["start"]}–{s["end"]} | {s["duration"]} |')

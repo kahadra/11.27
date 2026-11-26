@@ -1,4 +1,85 @@
 {
+ "conflict": {
+  "src": "conflict_v11b.py over unified-packages-v11/runs (v11b-fault-30c-lean, v11b-s1-30c-lean)",
+  "games": 24,
+  "late_from": 15,
+  "exposure": {
+   "open": 3528,
+   "open|early": 2177,
+   "open|late": 1351,
+   "secured": 909,
+   "secured|late": 748,
+   "secured|early": 161
+  },
+  "proposals": {
+   "open": 867,
+   "open|early": 558,
+   "secured": 282,
+   "secured|early": 72,
+   "open|late": 309,
+   "secured|late": 210
+  },
+  "trade_clues_given": {
+   "open": 1303,
+   "open|early": 866,
+   "secured": 457,
+   "secured|early": 122,
+   "open|late": 437,
+   "secured|late": 335
+  },
+  "accept": {
+   "open": [
+    523,
+    691
+   ],
+   "secured": [
+    171,
+    254
+   ],
+   "open|early": [
+    357,
+    448
+   ],
+   "open|late": [
+    166,
+    243
+   ],
+   "secured|early": [
+    45,
+    54
+   ],
+   "secured|late": [
+    126,
+    200
+   ]
+  },
+  "accusations": {
+   "secured|wrong": 110,
+   "secured|with_reason": 140,
+   "secured|cites_mission": 67,
+   "secured|right": 30,
+   "open|wrong": 5,
+   "open|with_reason": 12,
+   "open|cites_mission": 0,
+   "open|right": 7
+  },
+  "accusation_cycle_median": {
+   "secured": 30,
+   "open": 30
+  },
+  "missions_achieved": 258,
+  "imission_assigned": {
+   "I3": 15,
+   "I2": 11,
+   "I4": 21,
+   "I1": 16
+  },
+  "imission_achieved": {
+   "I3": 4,
+   "I1": 4,
+   "I4": 8
+  }
+ },
  "followthrough": {
   "v10-main": {
    "refusals": 224,
@@ -679,6 +760,26 @@
    "src": "03 실험기록 §7.5",
    "p1": 0.64,
    "p2": 0.81
+  },
+  "capacity": {
+   "src": "04 요소별 설계변화 §2 (용량 시뮬레이션)",
+   "personal": 536,
+   "team": 94,
+   "combos": 768,
+   "solve_coop": 0.94,
+   "solve_alone": 0.0
+  },
+  "flow": {
+   "src": "08 상호작용 지표 §3 B (v11b 24판)",
+   "via_question": 3333,
+   "via_trade": 1290
+  },
+  "missions": {
+   "src": "04 요소별 설계변화 §7, 미션_개편_v10.md",
+   "ordinary": 46,
+   "obstruction": 4,
+   "share_obstruction": "약 1/3",
+   "points": 20
   }
  }
 }

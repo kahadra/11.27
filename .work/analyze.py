@@ -115,9 +115,17 @@ DOC = {
     "s1_rank": dict(src="03 실험기록 §7.7", top=[("ESTP", 31.1), ("INFJ", 30.7), ("ENFP", 28.8), ("ENTJ", 28.3)],
                     bottom=[("ISFJ", 3.8), ("ISTJ", 3.4), ("ISTP", 2.8), ("ISFP", 0.9)]),
     "probe_entj": dict(src="03 실험기록 §7.5", p1=0.64, p2=0.81),
+    "capacity": dict(src="04 요소별 설계변화 §2 (용량 시뮬레이션)", personal=536, team=94, combos=768, solve_coop=0.94, solve_alone=0.0),
+    "flow": dict(src="08 상호작용 지표 §3 B (v11b 24판)", via_question=3333, via_trade=1290),
+    "missions": dict(src="04 요소별 설계변화 §7, 미션_개편_v10.md", ordinary=46, obstruction=4, share_obstruction="약 1/3", points=20),
 }
 
-R = dict(followthrough=FT, deception=DEC, votes=VOTE, sharing=SHARE, accept_by_affinity={f"{k[0]}|{k[1]}": v for k, v in F3.items()},
+# ---------- 8. mixed motive: secured personal mission vs disclosure / accusation (v11b) ----------
+sys.path.insert(0, str(HERE))
+from conflict_v11b import analyze as conflict_analyze  # noqa: E402
+CONFLICT = conflict_analyze()
+
+R = dict(conflict=CONFLICT, followthrough=FT, deception=DEC, votes=VOTE, sharing=SHARE, accept_by_affinity={f"{k[0]}|{k[1]}": v for k, v in F3.items()},
          metrics=dict(affinity=M["F_trust"], approaches=M["E_persuasion"], pairs=M["H_coalitions"], coord=M["I_coordination"],
                       settle=M["D_bargaining"]), axis={f"{k[0]}|{k[1]}": v for k, v in AX.items()}, probe=PROBE, documented=DOC)
 (HERE / "results.json").write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
