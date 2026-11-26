@@ -124,8 +124,10 @@ DOC = {
 sys.path.insert(0, str(HERE))
 from conflict_v11b import analyze as conflict_analyze  # noqa: E402
 CONFLICT = conflict_analyze()
+from ranking_s1 import analyze as ranking_analyze  # noqa: E402
+RANKING = ranking_analyze()
 
-R = dict(conflict=CONFLICT, followthrough=FT, deception=DEC, votes=VOTE, sharing=SHARE, accept_by_affinity={f"{k[0]}|{k[1]}": v for k, v in F3.items()},
+R = dict(conflict=CONFLICT, ranking_s1=RANKING, followthrough=FT, deception=DEC, votes=VOTE, sharing=SHARE, accept_by_affinity={f"{k[0]}|{k[1]}": v for k, v in F3.items()},
          metrics=dict(affinity=M["F_trust"], approaches=M["E_persuasion"], pairs=M["H_coalitions"], coord=M["I_coordination"],
                       settle=M["D_bargaining"]), axis={f"{k[0]}|{k[1]}": v for k, v in AX.items()}, probe=PROBE, documented=DOC)
 (HERE / "results.json").write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")

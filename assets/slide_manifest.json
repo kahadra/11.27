@@ -280,6 +280,20 @@
     "cue": ""
   },
   {
+    "title": "부록 · 최종 실험 순위 (시나리오 1)",
+    "section": "Appendix · Q&A",
+    "seconds": 0,
+    "notes": "최종 실험인 시나리오 1의 최종 순위입니다. 상위권은 정답을 2–3번 낸 에이전트이고, 하위 넷은 모두 IS 유형으로 정답이 없었습니다. 다만 캠페인마다 성격별 순위가 크게 흔들려서 성격의 특성으로 해석하지는 않습니다.",
+    "source": "ranking_s1.py (standings_published · final_feedback) · 03 실험기록 §7.7",
+    "short": "",
+    "aside": "",
+    "start": "19:00",
+    "end": "19:00",
+    "duration": "00:00",
+    "page": 1,
+    "cue": ""
+  },
+  {
     "title": "부록 · 장애 실험 (제안서의 두 번째 질문)",
     "section": "Appendix · Q&A",
     "seconds": 0,

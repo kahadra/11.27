@@ -80,6 +80,156 @@
    "I4": 8
   }
  },
+ "ranking_s1": {
+  "src": "v11b-s1-30c-lean: standings_published (last game) + final_feedback",
+  "games": 16,
+  "rows": [
+   {
+    "mbti": "ESTP",
+    "total": 373,
+    "games": 12,
+    "average": 31.08,
+    "wins": 3,
+    "wrong": 4,
+    "missions": 12
+   },
+   {
+    "mbti": "INFJ",
+    "total": 368,
+    "games": 12,
+    "average": 30.67,
+    "wins": 3,
+    "wrong": 5,
+    "missions": 15
+   },
+   {
+    "mbti": "ENFP",
+    "total": 345,
+    "games": 12,
+    "average": 28.75,
+    "wins": 3,
+    "wrong": 4,
+    "missions": 12
+   },
+   {
+    "mbti": "ENTJ",
+    "total": 340,
+    "games": 12,
+    "average": 28.33,
+    "wins": 2,
+    "wrong": 7,
+    "missions": 16
+   },
+   {
+    "mbti": "INTJ",
+    "total": 255,
+    "games": 12,
+    "average": 21.25,
+    "wins": 2,
+    "wrong": 4,
+    "missions": 12
+   },
+   {
+    "mbti": "ESTJ",
+    "total": 243,
+    "games": 12,
+    "average": 20.25,
+    "wins": 2,
+    "wrong": 2,
+    "missions": 10
+   },
+   {
+    "mbti": "ESFP",
+    "total": 221,
+    "games": 12,
+    "average": 18.42,
+    "wins": 3,
+    "wrong": 4,
+    "missions": 7
+   },
+   {
+    "mbti": "ENFJ",
+    "total": 210,
+    "games": 12,
+    "average": 17.5,
+    "wins": 2,
+    "wrong": 2,
+    "missions": 9
+   },
+   {
+    "mbti": "ESFJ",
+    "total": 168,
+    "games": 12,
+    "average": 14.0,
+    "wins": 1,
+    "wrong": 6,
+    "missions": 15
+   },
+   {
+    "mbti": "INFP",
+    "total": 150,
+    "games": 12,
+    "average": 12.5,
+    "wins": 1,
+    "wrong": 5,
+    "missions": 10
+   },
+   {
+    "mbti": "INTP",
+    "total": 148,
+    "games": 12,
+    "average": 12.33,
+    "wins": 1,
+    "wrong": 7,
+    "missions": 13
+   },
+   {
+    "mbti": "ENTP",
+    "total": 129,
+    "games": 12,
+    "average": 10.75,
+    "wins": 1,
+    "wrong": 1,
+    "missions": 7
+   },
+   {
+    "mbti": "ISFJ",
+    "total": 45,
+    "games": 12,
+    "average": 3.75,
+    "wins": 0,
+    "wrong": 4,
+    "missions": 12
+   },
+   {
+    "mbti": "ISTJ",
+    "total": 41,
+    "games": 12,
+    "average": 3.42,
+    "wins": 0,
+    "wrong": 5,
+    "missions": 9
+   },
+   {
+    "mbti": "ISTP",
+    "total": 33,
+    "games": 12,
+    "average": 2.75,
+    "wins": 0,
+    "wrong": 3,
+    "missions": 11
+   },
+   {
+    "mbti": "ISFP",
+    "total": 11,
+    "games": 12,
+    "average": 0.92,
+    "wins": 0,
+    "wrong": 4,
+    "missions": 7
+   }
+  ]
+ },
  "followthrough": {
   "v10-main": {
    "refusals": 224,

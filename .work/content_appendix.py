@@ -39,6 +39,24 @@ FAULT_ROWS = [
     ("107", "플레이어 4명이 차례로 끊김", "마감 · 86분", "정답 3명 · 57분"),
     ("108", "GM이 다섯 번 끊김", "대기자 소진 무효 · <b>538분</b>", "대기자 소진 무효 · <b>39분</b>"),
 ]
+RK = R["ranking_s1"]["rows"]
+
+
+def _rank_rows(rows, start):
+    return [[start + i, f'<b>{r["mbti"]}</b>' if start + i <= 4 else r["mbti"], f'{r["average"]:.1f}', r["total"],
+             r["wins"], r["wrong"], r["missions"]] for i, r in enumerate(rows)]
+
+
+_rh = ["순위", "MBTI", "평균", "총점", "정답", "오답 사망", "미션"]
+app("부록 · 최종 실험 순위 (시나리오 1)",
+    grid(table(_rh, _rank_rows(RK[:8], 1), "compact-table small-rows center"),
+         table(_rh, _rank_rows(RK[8:], 9), "compact-table small-rows center"))
+    + note(f"v11b 시나리오 1 · {R['ranking_s1']['games']}판 · 16명이 판마다 12명씩, 1명당 12판 · 평균 = 누적 점수(판 뒤 나눔 포함) ÷ 참가 판 · "
+           "정답 = 1위로 맞힌 판(한 판에 여러 명 가능) · 미션 = 달성한 일반 서브 미션 수")
+    + take(f"하위 넷은 모두 IS 유형으로 정답 0회 — 그러나 v9·v10 성격별 순위 상관 {D['rank_corr_v9_v10']['rho']} → 성격의 특성으로 읽지 않음"),
+    "최종 실험인 시나리오 1의 최종 순위입니다. 상위권은 정답을 2–3번 낸 에이전트이고, 하위 넷은 모두 IS 유형으로 정답이 없었습니다. 다만 캠페인마다 성격별 순위가 크게 흔들려서 성격의 특성으로 해석하지는 않습니다.",
+    "ranking_s1.py (standings_published · final_feedback) · 03 실험기록 §7.7")
+
 app("부록 · 장애 실험 (제안서의 두 번째 질문)",
     grid(box("제안서 H3 · 작업 연속성", "“동료가 실패했을 때 어떻게 계속 진행할 수 있는가” — 팀 보고서 서론에서는 제외됨<br><br>"
              f"• 장애를 넣기 전 첫 판이 <b>{FA['stall_hours']}시간</b> 멈춤 (같은 사유의 요청을 두 번 받은 조정 버그, {' → '.join(str(x) for x in FA['funnel'])}건으로 좁힘)<br>"
